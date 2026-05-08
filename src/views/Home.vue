@@ -70,14 +70,14 @@ const menuItems = [
     name: 'Plat de Tchep',
     description: 'Riz au poisson façon thiéboudienne, avec légumes mijotés et sauce tomate. Le classique sénégalais.',
     price: '2 500 F CFA',
-    image: '/images/tchep.jpg',
+    image: '/images/tchep.png',
   },
   {
     id: 'riz-sauce-graines',
     name: 'Riz Sauce Graines',
     description: 'Riz accompagné de sauce huile de palme avec viande tendre et épices. Saveur 100% authentique.',
     price: '2 500 F CFA',
-    image: '/images/riz-sauce-graines.jpg',
+    image: '/images/riz-sauce-graines.png',
   },
 ]
 
