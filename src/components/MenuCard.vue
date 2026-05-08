@@ -1,12 +1,16 @@
 <template>
   <div class="bg-white rounded-2xl shadow-md overflow-hidden transform transition-all duration-200 hover:-translate-y-1 hover:shadow-xl">
-    <!-- Visual -->
-    <div
-      class="h-44 flex items-center justify-center text-7xl relative"
-      :class="item.bgClass"
-    >
-      <span>{{ item.emoji }}</span>
-      <span class="absolute top-3 right-3 bg-white/90 text-gray-800 font-bold text-sm px-3 py-1 rounded-full shadow-sm">
+    <!-- Photo du plat -->
+    <div class="h-52 relative overflow-hidden">
+      <img
+        :src="item.image"
+        :alt="item.name"
+        class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+      />
+      <!-- Dégradé bas pour lisibilité du badge -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+      <!-- Badge prix -->
+      <span class="absolute top-3 right-3 bg-white/95 text-gray-800 font-bold text-sm px-3 py-1 rounded-full shadow-md">
         {{ item.price }}
       </span>
     </div>
