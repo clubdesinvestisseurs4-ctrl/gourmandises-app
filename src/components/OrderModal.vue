@@ -75,11 +75,16 @@
                       v-model="form.whatsapp"
                       type="tel"
                       required
-                      pattern="[+0-9\s\-]{8,20}"
                       placeholder="+225 07 00 00 00 00"
-                      class="w-full pl-9 pr-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent"
+                      @blur="validateWhatsapp"
+                      :class="[
+                        'w-full pl-9 pr-3 py-2.5 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:border-transparent',
+                        whatsappError ? 'border-red-400 focus:ring-red-300' : 'border-gray-300 focus:ring-gold'
+                      ]"
                     />
                   </div>
+                  <p v-if="whatsappError" class="mt-1 text-xs text-red-500">{{ whatsappError }}</p>
+                  <p v-else class="mt-1 text-xs text-gray-400">Indicatif obligatoire — ex: +225 07 00 00 00 00</p>
                 </div>
               </div>
 
@@ -128,9 +133,26 @@ const emit = defineEmits(['close', 'submitted'])
 
 const loading = ref(false)
 const error = ref('')
+const whatsappError = ref('')
 const form = reactive({ name: '', lastName: '', location: '', whatsapp: '' })
 
+const validateWhatsapp = () => {
+  const val = form.whatsapp.trim()
+  if (!val.startsWith('+225')) {
+    whatsappError.value = 'Le numéro doit commencer par +225'
+    return false
+  }
+  const digits = val.slice(4).replace(/\D/g, '')
+  if (digits.length < 8 || digits.length > 10) {
+    whatsappError.value = 'Numéro incomplet après +225 (8 à 10 chiffres)'
+    return false
+  }
+  whatsappError.value = ''
+  return true
+}
+
 const submit = async () => {
+  if (!validateWhatsapp()) return
   loading.value = true
   error.value = ''
   try {
@@ -140,7 +162,7 @@ const submit = async () => {
       name: form.name,
       lastName: form.lastName,
       location: form.location,
-      whatsapp: form.whatsapp,
+      whatsapp: form.whatsapp.trim(),
     })
     emit('submitted')
   } catch (err) {
