@@ -11,7 +11,7 @@
           AFRICAINES
         </div>
       </div>
-      <p class="mt-4 text-gray-500 text-sm md:text-base">
+      <p class="mt-4 text-gray-700 text-sm md:text-base font-medium">
         Saveurs authentiques d'Afrique de l'Ouest • Livraison à domicile
       </p>
     </header>
@@ -25,7 +25,7 @@
 
     <!-- Menu -->
     <main class="container mx-auto px-4 pb-16 max-w-2xl">
-      <h2 class="text-center text-xs font-bold text-gray-400 mb-8 uppercase tracking-widest">
+      <h2 class="text-center text-xs font-bold text-gray-600 mb-8 uppercase tracking-widest">
         Menu du Jour
       </h2>
 
@@ -40,7 +40,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="text-center py-6 text-xs text-gray-400 border-t border-gray-200">
+    <footer class="text-center py-6 text-xs text-gray-600 border-t border-gray-300">
       © 2024 Gourmandises Africaines — Fait avec amour pour les saveurs africaines
     </footer>
 
