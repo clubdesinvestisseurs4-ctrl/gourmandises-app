@@ -7,13 +7,19 @@
       <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
       <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-sm p-8 z-10 text-center">
-        <div class="text-6xl mb-4">😔</div>
-        <h2 class="text-2xl font-bold text-gray-800 mb-3">Désolé !</h2>
-        <p class="text-gray-600 leading-relaxed mb-2">
-          L'article que vous avez demandé est <strong>épuisé</strong>.
+        <!-- Icône animée -->
+        <div class="flex items-center justify-center w-16 h-16 rounded-full mx-auto mb-5" style="background-color: #edf7ed;">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="#2D6E2D" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+
+        <h2 class="text-xl font-bold text-gray-800 mb-3">Félicitations !</h2>
+        <p class="text-gray-700 leading-relaxed mb-2 font-medium">
+          Votre commande a bien été prise en compte.
         </p>
         <p class="text-gray-500 text-sm leading-relaxed mb-7">
-          Il sera disponible très prochainement. Nous vous contacterons dès sa disponibilité via WhatsApp !
+          Notre équipe vous contactera pour la livraison via <strong>WhatsApp</strong> pour confirmer votre commande.
         </p>
         <button
           @click="$emit('close')"
@@ -22,7 +28,7 @@
           @mouseover="$event.target.style.backgroundColor = '#1E5A1E'"
           @mouseout="$event.target.style.backgroundColor = '#2D6E2D'"
         >
-          D'accord, merci !
+          Parfait, merci !
         </button>
       </div>
     </div>
