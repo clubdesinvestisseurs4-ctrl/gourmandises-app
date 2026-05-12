@@ -67,16 +67,16 @@ import SoldOutModal from '../components/SoldOutModal.vue'
 const menuItems = [
   {
     id: 'tchep',
-    name: 'Plat de Tchep',
+    name: 'Plat de Tchep + 1 cannette de Bière',
     description: 'Riz au poisson façon thiéboudienne, avec légumes mijotés et sauce tomate. Le classique sénégalais.',
-    price: '2 500 F CFA',
+    price: '3 000 FCFA',
     image: '/images/tchep.png',
   },
   {
     id: 'riz-sauce-graines',
-    name: 'Riz Sauce Graines',
+    name: 'Riz Sauce Graines + 1 cannette de Bière',
     description: 'Riz accompagné de sauce huile de palme avec viande tendre et épices. Saveur 100% authentique.',
-    price: '2 500 F CFA',
+    price: '3 000 FCFA',
     image: '/images/riz-sauce-graines.png',
   },
 ]
